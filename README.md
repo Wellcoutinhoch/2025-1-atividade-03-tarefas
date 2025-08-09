@@ -16,7 +16,7 @@
 
 ---
 
-## Parte 1. Tutotirla introdutório de Dockerfile
+## Parte 1. Tutorial introdutório de Dockerfile
 
 **Tutorial Introdutório a Dockerfile** by [deepseek](https://chat.deepseek.com/).
 
@@ -157,7 +157,7 @@ Nesta prática, você aprenderá a usar um **Dockerfile** para criar um ambiente
 
 ### 2.2. Desenvolvimento das Atividades
 
-#### 2.2.1. Fork e indentificação do aluno
+#### 2.2.1. Fork e identificação do aluno
 
 1. Fork desse repositório para seu pessoal (de estudo).
 2. Modifique o README procurando por FIXME na linha 10 por seu nome (coloque link para sua conta github).
@@ -182,6 +182,9 @@ Veja tutorial acima e construa a sua imagem docker.
 
 Veja tutorial acima e execute o tutorial.
 
+gcc programa.c -o programa
+./programa
+
 Lembre:
 1. instalar o `gcc`.
 2. você esta no terminal `fish`, ele tentará te ajudar.
@@ -202,19 +205,29 @@ Para **compilar e executar** seus códigos-fontes.
 - deve conter imagens da tela capturada,
 - apesar da atividade ser coletiva, relatório deve ser individual.
 
-**Nome:** [Seu Nome]  
-**Data:** [Data]  
+**Nome:** [Wellington Gomes Coutinho]  
+**Data:** [09/08/2025]  
 
 ### **1. Objetivo**  
-[Descreva brevemente o objetivo da prática.]  
+[O objetivo desta prática é criar uma imagem Docker baseada no Fedora, instalar o compilador GCC, mapear um diretório do host para o container e compilar/executar programas em C dentro do ambiente isolado criado pelo Docker.]  
 
 ### **2. Passos Executados**  
-- [Liste os comandos usados e suas funções.]  
+- [Liste os comandos usados e suas funções.]
+- `docker build -t minha-imagem-fedora .` — Construção da imagem Docker.
+- `docker run -it --rm -v ${PWD}:/app minha-imagem-fedora` — Execução do container com volume mapeado.
+- `dnf install gcc -y` — Instalação do compilador GCC dentro do container.
+- `gcc programa.c -o programa` — Compilação do programa.
+- `./programa` — Execução do programa.
 - [Inclua prints (opcional).]  
+#### Print da execução:
+![Print da execução do Docker](https://i.postimg.cc/9FjGdkhp/Captura-de-tela-2025-08-09-162019.png)
 
 ### **3. Resultados Obtidos**  
-- [Saída do programa em C.]  
+- [Saída do programa em C.]
+- `Olá Docker!`
 - [Problemas enfrentados e soluções.]  
-
+- `Problema encontrado: falta do GCC na imagem base.`
+- Solução: instalar com `dnf install gcc -y`.
 ### **4. Conclusão**  
 [Comente sobre a experiência e possíveis aplicações.]  
+`A prática permitiu compreender como configurar e utilizar um ambiente Docker para compilação de código em C, tornando o processo isolado, portátil e reproduzível.`
